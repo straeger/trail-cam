@@ -4,7 +4,6 @@ import RPi.GPIO as GPIO
 class MotionCaptureService:
     
     gpioPin = 12345
-    var = 1
     counter = 0
 
     def __init__(self, gpioInputPin):
@@ -17,7 +16,6 @@ class MotionCaptureService:
         GPIO.add_event_detect(self.gpioPin, GPIO.RISING, callback=self.capture, bouncetime=300)
      
     def capture(self,f):
-        if self.var == 1:
             sleep(1.5)  # confirm the movement by waiting 1.5 sec
             if GPIO.input(self.gpioPin):  # and check again the input
                 print("Movement!")
