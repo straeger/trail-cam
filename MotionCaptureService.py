@@ -16,12 +16,12 @@ class MotionCaptureService:
         GPIO.add_event_detect(self.gpioPin, GPIO.RISING, callback=self.capture, bouncetime=300)
      
     def capture(self,f):
-        print("Capture!")
+        print("Movement!")
         sleep(1.5)  # confirm the movement by waiting 1.5 sec
-            if GPIO.input(self.gpioPin):  # and check again the input
-                print("Movement!")
+        if GPIO.input(self.gpioPin):  # and check again the input
+            print("Movement!")
 
-                # stop detection for 20 sec
-                GPIO.remove_event_detect(self.gpioPin)
-                sleep(2)
-                GPIO.add_event_detect(self.gpioPin, GPIO.RISING, callback=self.capture, bouncetime=300)
+            # stop detection for 20 sec
+            GPIO.remove_event_detect(self.gpioPin)
+            sleep(2)
+            GPIO.add_event_detect(self.gpioPin, GPIO.RISING, callback=self.capture, bouncetime=300)
