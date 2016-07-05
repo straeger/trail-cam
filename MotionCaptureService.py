@@ -13,6 +13,7 @@ class MotionCaptureService:
         self.gpioPin = gpioInputPin
 
     def addEvent(self):
+        print("Add Event!")
         GPIO.add_event_detect(self.gpioPin, GPIO.RISING, callback=self.capture, bouncetime=300)
      
     def capture(self,f):
