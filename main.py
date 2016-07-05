@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 
 from MotionCaptureService import MotionCaptureService
 
-motionCaptureService = MotionCaptureService(21)
+motionCaptureService = MotionCaptureService(19)
 
 # you can continue doing other stuff here
 while True:
