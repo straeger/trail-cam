@@ -9,7 +9,6 @@ from MotionCaptureService import MotionCaptureService
 
 GPIO.setmode(GPIO.BOARD)
 motionCaptureService = MotionCaptureService(21)
-motionCaptureService.addEvent()
 
 # you can continue doing other stuff here
 while True:
