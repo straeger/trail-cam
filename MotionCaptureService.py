@@ -23,6 +23,6 @@ class MotionCaptureService:
                 print("Movement!")
 
                 # stop detection for 20 sec
-                GPIO.remove_event_detect(7)
-                sleep(20)
+                GPIO.remove_event_detect(self.gpioPin)
+                sleep(2)
                 GPIO.add_event_detect(self.gpioPin, GPIO.RISING, callback=self.capture, bouncetime=300)
