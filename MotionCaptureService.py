@@ -19,7 +19,7 @@ class MotionCaptureService:
     def capture(self,f):
         if self.var == 1:
             sleep(1.5)  # confirm the movement by waiting 1.5 sec
-            if GPIO.input(7):  # and check again the input
+            if GPIO.input(self.gpioPin):  # and check again the input
                 print("Movement!")
 
                 # stop detection for 20 sec
