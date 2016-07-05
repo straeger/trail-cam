@@ -1,0 +1,16 @@
+from time import sleep
+import RPi.GPIO as GPIO
+
+class MotionCaptureService:
+    
+    gpioPin = 12345
+
+    def __init__(self, gpioInputPin):
+        
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(gpioInputPin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+        self.gpioPin = gpioInputPin
+        GPIO.add_event_detect(self.gpioPin, GPIO.RISING, callback=capture, bouncetime=300)
+        
+    def capture(self):
+        return 'hello world'
