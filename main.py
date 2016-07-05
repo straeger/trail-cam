@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 
 from MotionCaptureService import MotionCaptureService
 
-
+GPIO.setmode(GPIO.BOARD)
 motionCaptureService = MotionCaptureService(21)
 motionCaptureService.addEvent()
 
